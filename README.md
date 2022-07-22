@@ -24,4 +24,4 @@ The way to use this site correctly would be to have the user enter in the desire
 
 TA Ben helped me created an alert for if the user enters in an invalid desired password length.
 
-deployed page: 
+deployed page: https://fredkamm.github.io/password-generator/
