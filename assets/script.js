@@ -9,16 +9,18 @@ var specialChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', 
 
 var numberChars =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
-var choices = [upperCase, lowerCase, specialChars, numberChars];
+var allChars = [upperCase, lowerCase, specialChars, numberChars];
     
+// password length
+var passwordLength = "10";
+window.prompt('How many characters would you like your password to be?(8-128)');
 
-//prompts for the user
-var passwordLength = 0;
-    window.prompt('How many characters would you like your password to be?(8-128)');
-    if ((passwordLength < 8) && (passwordLength > 128)){
+// help from TA Ben to get this alert right
+if (passwordLength > 8 || passwordLength > 128){
     window.alert('not a valid input');
-    }
+}
 
+//window confirms for the user
 var useUpper = window.confirm('Do you want to include UPPER case letters?(Ok = yes)');
    
 var useLower = window.confirm('Do you want to include LOWER case Leters?(Ok = yes)');
@@ -26,6 +28,8 @@ var useLower = window.confirm('Do you want to include LOWER case Leters?(Ok = ye
 var useNumbers = window.confirm('Do you want to include numbers? (Ok = yes)');
     
 var useSpecial = window.confirm('Do you want to inlcude SPECIAL characters?(Ok = yes)');
+
+var choices = [useUpper, useLower, useNumbers, useSpecial];
    
 function generatePassword() {
   var password = "";
@@ -35,14 +39,11 @@ function generatePassword() {
     password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
     password = password + numberChars[Math.floor(Math.random() * numberChars.length)];
     password = password + specialChars[Math.floor(Math.random() * specialChars.length)];
-
-
-  }
+    }
 
   return password;
 }
 
-console.log(password)
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -70,3 +71,4 @@ generateBtn.addEventListener('click', writePassword);
 // The computer will store the user input
 // The computer will then take the users input and generate a random password that fits the users criteria
 // The password will display in the box on the site.
+
