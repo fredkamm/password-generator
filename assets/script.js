@@ -1,4 +1,4 @@
-// Assignment Code
+// Assignment Code/Variables
 var generateBtn = document.querySelector('#generate');
 
 var upperCase = ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I','J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -12,7 +12,7 @@ var numberChars =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 var allChars = [upperCase, lowerCase, specialChars, numberChars];
     
 // password length
-var passwordLength = "10";
+var passwordLength = "1";
 window.prompt('How many characters would you like your password to be?(8-128)');
 
 // help from TA Ben to get this alert right
@@ -35,6 +35,8 @@ function generatePassword() {
   var password = "";
   // TODO: add code to generate the password here
   for ( var i = 0; i <= passwordLength; i++){
+    password = password + passwordLength[Math.floor(Math.random() * passwordLength.length)];
+  // generating random letters/numbers/specials
     password = password + upperCase[Math.floor(Math.random() * upperCase.length)];
     password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
     password = password + numberChars[Math.floor(Math.random() * numberChars.length)];
