@@ -12,17 +12,18 @@ var numberChars =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 var allChars = [upperCase, lowerCase, specialChars, numberChars];
     
 // password length
-var passwordLength = "1";
+var passwordLength = 0;
 window.prompt('How many characters would you like your password to be?(8-128)');
-
+passwordLength = parseInt(passwordLength, 10)
 // help from TA Ben to get this alert right
-if (passwordLength > 8 || passwordLength > 128){
+// if user eneters number less than 8 or more than 128 they will be alerted 
+if (passwordLength < 8 || passwordLength > 128){
     window.alert('not a valid input');
 }
 
 //window confirms for the user
 var useUpper = window.confirm('Do you want to include UPPER case letters?(Ok = yes)');
-   
+  
 var useLower = window.confirm('Do you want to include LOWER case Leters?(Ok = yes)');
     
 var useNumbers = window.confirm('Do you want to include numbers? (Ok = yes)');
@@ -35,15 +36,24 @@ function generatePassword() {
   var password = "";
   // TODO: add code to generate the password here
   for ( var i = 0; i <= passwordLength; i++){
-    password = password + passwordLength[Math.floor(Math.random() * passwordLength.length)];
+
   // generating random letters/numbers/specials
+  // i feel like this is where you would include the passwordLength but im not sure how the code should be worded
+    if(useUpper == true){
     password = password + upperCase[Math.floor(Math.random() * upperCase.length)];
+   }
+    if(useLower == true){
     password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
+    }
+    if(useNumbers == true){
     password = password + numberChars[Math.floor(Math.random() * numberChars.length)];
+    }
+    if(useSpecial == true){
     password = password + specialChars[Math.floor(Math.random() * specialChars.length)];
     }
+    return password;
+  }
 
-  return password;
 }
 
 // Write password to the #password input
@@ -73,4 +83,3 @@ generateBtn.addEventListener('click', writePassword);
 // The computer will store the user input
 // The computer will then take the users input and generate a random password that fits the users criteria
 // The password will display in the box on the site.
-

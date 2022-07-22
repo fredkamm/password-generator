@@ -19,6 +19,7 @@ The way to use this site correctly would be to have the user enter in the desire
     md![alt text](./assets/images/Screen%20Shot%202022-07-21%20at%207.58.04%20PM.png)
     md![alt text](./assets/images/Screen%20Shot%202022-07-21%20at%207.58.15%20PM.png)
     
+So i'm able to have a password appear in the generator, and the users choices are registering correctly and generating random numbers. the only thing that is missing that i cant seem to figure out is the passwordLength and implementing it with the rest of the code for it to run as we want it.
 
 ## Credits
 
