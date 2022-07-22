@@ -14,10 +14,9 @@ var allChars = [upperCase, lowerCase, specialChars, numberChars];
 // password length
 var passwordLength = 0;
 window.prompt('How many characters would you like your password to be?(8-128)');
-passwordLength = parseInt(passwordLength, 10)
 // help from TA Ben to get this alert right
 // if user eneters number less than 8 or more than 128 they will be alerted 
-if (passwordLength < 8 || passwordLength > 128){
+if (passwordLength <= 7 || passwordLength > 128){
     window.alert('not a valid input');
 }
 
