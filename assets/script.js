@@ -1,58 +1,54 @@
-// Assignment Code/Variables
+// Assignment Code
 var generateBtn = document.querySelector('#generate');
 
-var upperCase = ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I','J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// creating the function that generates the password
+function generatePassword(){
 
-var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var password= '';
+  var choices = [];
 
-var specialChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '}', '[', ']', '|', '/', ';', ':', '"', '<', '>', ',', '.', '?' ];
+  //  variables for each character
+  var upperCase = ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I','J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k','l','m','n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
+  var specialChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '}', '[', ']', '|', '/', ';', ':', '"', '<', '>', ',', '.', '?' ];
+  var numberChars =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
-var numberChars =['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-
-var allChars = [upperCase, lowerCase, specialChars, numberChars];
-    
-// password length
-var passwordLength = 0;
-window.prompt('How many characters would you like your password to be?(8-128)');
-// help from TA Ben to get this alert right
-// if user eneters number less than 8 or more than 128 they will be alerted 
-if (passwordLength <= 7 || passwordLength > 128){
-    window.alert('not a valid input');
-}
-
-//window confirms for the user
-var useUpper = window.confirm('Do you want to include UPPER case letters?(Ok = yes)');
-  
-var useLower = window.confirm('Do you want to include LOWER case Leters?(Ok = yes)');
-    
-var useNumbers = window.confirm('Do you want to include numbers? (Ok = yes)');
-    
-var useSpecial = window.confirm('Do you want to inlcude SPECIAL characters?(Ok = yes)');
-
-var choices = [useUpper, useLower, useNumbers, useSpecial];
-   
-function generatePassword() {
-  var password = "";
-  // TODO: add code to generate the password here
-  for ( var i = 0; i <= passwordLength; i++){
-
-  // generating random letters/numbers/specials
-  // i feel like this is where you would include the passwordLength but im not sure how the code should be worded
-    if(useUpper == true){
-    password = password + upperCase[Math.floor(Math.random() * upperCase.length)];
-   }
-    if(useLower == true){
-    password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
-    }
-    if(useNumbers == true){
-    password = password + numberChars[Math.floor(Math.random() * numberChars.length)];
-    }
-    if(useSpecial == true){
-    password = password + specialChars[Math.floor(Math.random() * specialChars.length)];
-    }
-    return password;
+  // prompt for the password length
+  var passLength = prompt('enter desired password (min. 8 and a max of 128)');
+  if (passLength < 8 || passLength > 128){
+    alert("invalid password length, please try again");
+    return "";
   }
 
+  // confirming the char types
+  if (confirm("do you want to include uppercase letters?")) {
+    choices = choices.concat(upperCase);
+    password += upperCase[Math.floor(Math.random()*upperCase.length)];
+  }
+  if (confirm("do you want to include lowercase letters?")) {
+    choices = choices.concat(lowerCase);
+    password += lowerCase[Math.floor(Math.random()*lowerCase.length)];
+  }
+  if (confirm("do you want to include numbers?")) {
+    choices = choices.concat(numberChars);
+    password += numberChars[Math.floor(Math.random()*numberChars.length)];
+  }
+  if (confirm("do you want to include special characters?")) {
+    choices = choices.concat(specialChars);
+    password += specialChars[Math.floor(Math.random()*specialChars.length)];
+  }
+
+  // notifying if they dont choosing anything they need to choose a character
+  if (password.length === 0){
+    alert('you must choose at least one character');
+    return '';
+  }
+//  how to add the input length to the choices 
+  while (password.length < passLength) {
+    password += choices[Math.floor(Math.random()*choices.length)];
+  }
+  
+  return password;
 }
 
 // Write password to the #password input
@@ -65,7 +61,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
 
 // Pseudocode
 
@@ -82,3 +77,4 @@ generateBtn.addEventListener('click', writePassword);
 // The computer will store the user input
 // The computer will then take the users input and generate a random password that fits the users criteria
 // The password will display in the box on the site.
+
