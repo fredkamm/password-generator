@@ -23,4 +23,4 @@ So i'm able to have a password appear in the generator, and the users choices ar
 
 TA Ben helped me created an alert for if the user enters in an invalid desired password length.
 
-deployed page: https://fredkamm.github.io/password-generator/
+deployed page: https://fredspasswordgenerator.netlify.app
