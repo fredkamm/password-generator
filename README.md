@@ -1,26 +1,34 @@
 # password-generator
 
-## Description
+A simple random password generator.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+# Inspiration
 
-- The goal in the project was to create a functioning password generator that meets the users criteria.
-- I helped build this site because a random password generator that includes upper and lower case letters, special characters and numbers. giving the user a password to user for various accounts makes it almost impossible for someone to hack into their accounts.
-- The problem with the app originally was that it was not generating a password at all. Currently it is not working to the acceptable standards but it is generating a password at the moment.
-- The one thing i learned is that javascript is not easy and it an important piece to making sure your site is running successfully.
+I wanted to polish up on my JavaScript skills and the most efficient and entertaining project to practice those skills is creating a password generator. Not only is it great practice but this is a very useful tool that I use quite often.
 
+# Usage
 
-## Usage
+<div>
+    <a href="https://fredspasswordgenerator.netlify.app">
+        Visit my site here!
+    </a>
+</div>
+<div>
+    <img src="./assets/images//Screen%20Shot%202022-10-13%20at%206.33.21%20PM.png" alt="LinkedIn Badge"  width="300" height="300"/>
+</div>
+<div>
+    <p>Users are given the option to choose how many character lengths they would like by using the range slider that increases and decreases the total to the right. <br> Users are always given the opportunity to include UPPER LOWER and SPECIAL characters if the desire.</p>
+</div>
 
-The way to use this site correctly would be to have the user enter in the desired about of character they would like in their password. Then they will be asked if they would like to include uppercase letters, lowercase letters, numbers, and/or special characters. the users input will then be logged so that the password generated will meet the users criteria. after the user answers all the prompts they will be asked to click the 'generate password' button which will then display the password that meets the users criteria.
+# Tools Used
 
-'
-    md![alt text](./assets/images//Screen%20Shot%202022-10-13%20at%206.33.21%20PM.png)
-    
-So i'm able to have a password appear in the generator, and the users choices are registering correctly and generating random numbers. the only thing that is missing that i cant seem to figure out is the passwordLength and implementing it with the rest of the code for it to run as we want it.
+- HTML
+- CSS
+- JavaScript
 
-## Credits
+# Questions
 
-TA Ben helped me created an alert for if the user enters in an invalid desired password length.
-
-deployed page: https://fredspasswordgenerator.netlify.app
+<div>
+    <p>Any questions or would like to collaborate<br>Please shoot me an <a href="mailto:fred.kamm95@gmail.com"> Email </a></p>
+    <p>If you would like to view more of my work <br>Visit my <a href="https://github.com/fredkamm ">Github</a> profile</p>
+</div>
