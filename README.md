@@ -17,7 +17,7 @@ I wanted to polish up on my JavaScript skills and the most efficient and enterta
     <img src="./assets/images//Screen%20Shot%202022-10-13%20at%206.33.21%20PM.png" alt="LinkedIn Badge"  width="300" height="300"/>
 </div>
 <div>
-    <p>Users are given the option to choose how many character lengths they would like by using the range slider that increases and decreases the total to the right. <br> Users are always given the opportunity to include UPPER LOWER and SPECIAL characters if the desire.</p>
+    <p>Users are given the option to choose how many character lengths they would like by using the range slider that increases and decreases the total to the right. <br> Users are always given the opportunity to include UPPER/SPECIAL characters and NUMBERS if the desire.</p>
 </div>
 
 # Tools Used
