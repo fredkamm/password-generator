@@ -7,12 +7,17 @@ A simple random password generator.
 I wanted to polish up on my JavaScript skills and the most efficient and entertaining project to practice those skills is creating a password generator. Not only is it great practice but this is a very useful tool that I use quite often.
 
 # Usage
-
+<div>
+    <p>
+        This is a very simple and user friend experience. User's can adjust the password length using the range finder bar or they can type in the desired number of characters in the input box representing the number of characters. User can select to have the password include LOWERCASE, UPPERCASE, NUMBERS, and/or SPECIAL SYMBOLS. If user does not select any of the check boxes the password will generate all LOWERCASE characters.
+    </p>
+</div>
 <div>
     <a href="https://fredspasswordgenerator.netlify.app">
         Visit my site here!
     </a>
 </div>
+<br>
 <div>
     <img src="./assets/images//Screen%20Shot%202022-10-13%20at%206.33.21%20PM.png" alt="LinkedIn Badge"  width="300" height="300"/>
 </div>
@@ -22,9 +27,9 @@ I wanted to polish up on my JavaScript skills and the most efficient and enterta
 
 # Tools Used
 
-- HTML
-- CSS
-- JavaScript
+- ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 # Questions
 
