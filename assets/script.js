@@ -65,3 +65,21 @@ function syncCharacterAmount(e) {
   characterAmountNumber.value = value;
   characterAmountRange.value = value;
 }
+
+function copyPassword() {
+  const range = document.createRange();
+  range.selectNode(passwordDisplay);
+  window.getSelection().addRange(range);
+
+  try {
+    // Now that we've selected the anchor text, execute the copy command
+    const successful = document.execCommand("copy");
+    const msg = successful ? "Successful" : "Unsuccessful";
+    alert(msg + " copy");
+  } catch (err) {
+    alert("Oops, unable to copy");
+  }
+
+  window.getSelection().removeAllRanges();
+}
+
