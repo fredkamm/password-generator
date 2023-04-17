@@ -1,19 +1,69 @@
+:root {
+  --checkbox-red: #f55f7b;
+  --checkbox-green: #70f379;
+}
+
 body {
-  background-color: #333;
+  height: 600px;
+  background: linear-gradient(62deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
   margin: 0;
   color: white;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+/* Creating the color movements in the backgrounds of the body and password generator container */
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Style for the toast container */
+#toast-container {
+  position: fixed;
+  top: 35px;
+  z-index: 9999;
+}
+
+/* Style for the toast */
+.toast {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .container {
-  background-color: #006699;
+  background: linear-gradient(62deg, #4cb8c4, #4cd5b8, #f48b6d, #f06a98);
+  animation: gradient 10s ease infinite;
+  background-size: 400% 400%;
   padding: 3rem;
   border-radius: 1rem;
-  border: 2px solid black;
+  border: 2px solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,14 +88,73 @@ label {
   font-weight: bold;
 }
 
+#characterAmountRange {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 10px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#characterAmountRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .character-amount-container {
   display: flex;
-  align-items: center;
 }
 
 .number-input {
-  width: 2rem;
+  height: 26px;
+  width: 48px;
+  border: 2px solid white;
+  border-radius: 6px;
+  text-align: center;
+  margin-left: 2rem;
 }
+
+/* START OF checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  height: 26px;
+  width: 48px;
+  border: 2px solid var(--checkbox-red);
+  border-radius: 6px;
+}
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 24px;
+  margin: 1px 18px;
+  background-color: var(--checkbox-red);
+  border-radius: 6px;
+}
+input[type="checkbox"]:hover {
+  border: 2px solid var(--checkbox-green);
+}
+input[type="checkbox"]:checked {
+  padding: 1px 2px;
+  border: 2px solid var(--checkbox-green);
+  border-radius: 6px;
+}
+input[type="checkbox"]:checked:hover {
+  border: 2px solid var(--checkbox-red);
+  border-radius: 6px;
+}
+input[type="checkbox"]:checked::before {
+  margin: 0;
+  background-color: var(--checkbox-green);
+}
+/* END of checkbox styling */
 
 .display {
   display: inline-flex;
@@ -62,7 +171,7 @@ label {
   justify-content: center;
   align-items: center;
   word-break: break-all;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .btn2 {
@@ -70,7 +179,7 @@ label {
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 1rem;
@@ -78,7 +187,7 @@ label {
 }
 
 .btn2:hover {
-  background-color: #FFFFFF33;
+  background-color: #ffffff33;
 }
 
 .btn {
@@ -86,12 +195,12 @@ label {
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 1rem;
 }
 
 .btn:hover {
-  background-color: #FFFFFF33;
+  background-color: #ffffff33;
 }

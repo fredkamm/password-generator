@@ -74,12 +74,30 @@ function copyPassword() {
   try {
     // Now that we've selected the anchor text, execute the copy command
     const successful = document.execCommand("copy");
-    const msg = successful ? "Successful" : "Unsuccessful";
-    alert(msg + " copy");
+    const msg = successful ? "Copied to clipboard" : "Unsuccessful";
+
+    // Create a toast notification with the message
+    showToast(msg);
   } catch (err) {
-    alert("Oops, unable to copy");
+    // Create a toast notification for error message
+    showToast("Oops, unable to copy");
   }
 
   window.getSelection().removeAllRanges();
 }
 
+function showToast(message) {
+  // Create a toast element
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+
+  // Add the toast element to the toast container
+  const toastContainer = document.getElementById("toast-container");
+  toastContainer.appendChild(toast);
+
+  // Automatically remove the toast after a few seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3000); // Adjust the timeout value to control the duration of the toast
+}
